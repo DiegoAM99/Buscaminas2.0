@@ -6,6 +6,8 @@
 package codigo;
 
 import java.awt.GridLayout;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import javax.swing.JButton;
 
 /**
@@ -35,11 +37,22 @@ public class VentanaBuscaminas extends javax.swing.JFrame {
                 JButton boton = new JButton();
                 boton.setBorder(null);
                 getContentPane().add(boton);
-                
+                arrayBotones[i][j] = boton;
+                boton.addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mousePressed(MouseEvent evt){
+                        botonPulsado(evt);
+                    }
+                });
             }
         }
     }
-
+    private void botonPulsado(MouseEvent e){
+        JButton miBoton = (JButton) e.getComponent();
+        if(e.getButton() == MouseEvent.BUTTON3){
+            miBoton.setText("?");
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
