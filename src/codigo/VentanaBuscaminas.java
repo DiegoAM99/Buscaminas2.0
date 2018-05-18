@@ -32,6 +32,9 @@ public class VentanaBuscaminas extends javax.swing.JFrame {
     public VentanaBuscaminas() {
         initComponents();
         setSize(27*columnas , 29*filas);
+        setTitle("Buscaminas de Diego Álvarez");
+        setLocationRelativeTo(null);
+        getContentPane().setLayout(new GridLayout(filas, columnas));
         getContentPane().setLayout(new GridLayout(filas, columnas));
         for (int i=0; i<filas; i++){
             for (int j=0; j<columnas; j++){
